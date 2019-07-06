@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { format } from 'path';
 
-class StorePicker extends React.Component {
+class StorePicker extends Component {
   render() {
     return (
       <form className="store-selector">
