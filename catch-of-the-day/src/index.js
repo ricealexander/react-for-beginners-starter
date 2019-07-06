@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-
-class StorePicker extends Component {
-  render() {
-    return <p>Hello!</p>
-  }
-}
+import StorePicker from './components/StorePicker';
 
 render(<StorePicker />, document.querySelector('#main'));
