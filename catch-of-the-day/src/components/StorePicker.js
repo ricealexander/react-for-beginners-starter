@@ -6,7 +6,12 @@ class StorePicker extends Component {
     return (
       <form className="store-selector">
         <h2>Please Enter A Store</h2>
-        <input type="text" placeholder="Store Name" defaultValue={getFunName()} required />
+        <input
+          type="text"
+          placeholder="Store Name"
+          defaultValue={getFunName()}
+          required
+        />
         <button type="submit">Visit Store →</button>
       </form>
     )
