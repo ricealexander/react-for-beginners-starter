@@ -7,4 +7,4 @@ class StorePicker extends Component {
   }
 }
 
-render(<p>HEYYYYY</p>, document.querySelector('#main'));
+render(<StorePicker />, document.querySelector('#main'));
