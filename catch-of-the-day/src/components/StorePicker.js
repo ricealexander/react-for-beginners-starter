@@ -1,8 +1,15 @@
 import React from 'react';
+import { format } from 'path';
 
 class StorePicker extends React.Component {
   render() {
-    return <p>I am the store Picker!!</p>
+    return (
+      <form className="store-selector">
+        <h2>Please Enter A Store</h2>
+        <input type="text" placeholder="Store Name" required />
+        <button type="submit">Visit Store →</button>
+      </form>
+    )
   }
 }
 
