@@ -2,16 +2,10 @@ import React, { Component } from 'react';
 import { getFunName } from '../helpers';
 
 class StorePicker extends Component {
-  handleClick() {
-    alert('Heeeey!');
-  }
   render() {
     return (
       <form className="store-selector">
         <h2>Please Enter A Store</h2>
-
-        <button onClick={this.handleClick}>Click me!</button>
-
         <input
           type="text"
           placeholder="Store Name"
