@@ -184,5 +184,8 @@ module.exports = {
       "unicorn/no-process-exit": "off",
       "unicorn/no-unsafe-regex": "off",
       "unicorn/no-unused-properties": "off",
+
+
+      "react/prop-types": "off",
     }
   }
