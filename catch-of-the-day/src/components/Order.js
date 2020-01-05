@@ -6,9 +6,9 @@ class Order extends Component {
     const fish = this.props.fishes[key]
     const count = this.props.order[key]
     const isAvailable = (fish && fish.status === 'available')
-    console.log(count)
+
     // make sure the fish has loaded before we continue!
-    if (!fish || !count) return null
+    if (!fish) return null
 
     if (!isAvailable) {
       return (
@@ -21,7 +21,7 @@ class Order extends Component {
       <li key={key}>
         {count} lbs {fish.name}
         {formatPrice(count * fish.price)}
-        <button onClick={()=> this.props.removeFromOrder(key)}>Remove Fish</button>
+        <button onClick={()=> this.props.removeFromOrder(key)}>&times;</button>
       </li>
     )
   };

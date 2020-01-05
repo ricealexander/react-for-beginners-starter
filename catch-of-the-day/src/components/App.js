@@ -82,7 +82,7 @@ class App extends Component {
 
   removeFromOrder = key => {
     const order = { ...this.state.order }
-    order[key] = null
+    delete order[key]
     this.setState({ order })
   }
 
