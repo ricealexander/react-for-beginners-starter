@@ -3,7 +3,12 @@
   "version": "0.0.3",
   "private": true,
   "devDependencies": {
+    "babel-eslint": "^10.0.3",
     "concurrently": "4.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-unicorn": "^15.0.1",
     "react-scripts": "^3.0.1"
   },
   "dependencies": {
