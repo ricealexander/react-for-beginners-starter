@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class EditFishForm extends Component {
-  handleChange = (event) => {
-    const { name, value } = event.currentTarget;
-    const { index, fish, updateFish } = this.props;
+  handleChange = event => {
+    const { name, value } = event.currentTarget
+    const { index, fish, updateFish } = this.props
 
     // update that fish
     // 1. Take a copy of the current fish
@@ -11,12 +11,12 @@ class EditFishForm extends Component {
       ...fish,
       [name]: value,
     }
-    updateFish(index, updatedFish);
+    updateFish(index, updatedFish)
   }
 
-  render() {
-    const { desc, image, name, price, status } = this.props.fish;
-    const isAvailable = (status === 'available');
+  render () {
+    const { desc, image, name, price, status } = this.props.fish
+    const isAvailable = (status === 'available')
 
     return (
       <div className="fish-edit">
@@ -49,8 +49,8 @@ class EditFishForm extends Component {
           value={image}
         />
       </div>
-    );
+    )
   }
 }
 
-export default EditFishForm;
+export default EditFishForm

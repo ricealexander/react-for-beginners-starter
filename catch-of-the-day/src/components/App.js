@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import Header from "./Header";
-import Order from "./Order";
-import Inventory from "./Inventory";
-import Fish from './Fish';
-import base from '../base';
+import React, { Component } from 'react'
+import Header from './Header'
+import Order from './Order'
+import Inventory from './Inventory'
+import Fish from './Fish'
+import base from '../base'
 
-import sampleFishes from '../sample-fishes';
+import sampleFishes from '../sample-fishes'
 
 class App extends Component {
   state = {
@@ -14,64 +14,66 @@ class App extends Component {
   };
 
   componentDidMount () {
-    const { storeID } = this.props.match.params;
+    const { storeID } = this.props.match.params
 
     // first reinstate our localStorage
-    const localStorageRef = localStorage.getItem(storeID);
+    const localStorageReference = localStorage.getItem(storeID)
     //localStorageRef && this.setState({ order: JSON.parse(localStorageRef)});
-    if (localStorageRef) {
-      this.setState({ order: JSON.parse(localStorageRef)});
+    if (localStorageReference) {
+      this.setState({ order: JSON.parse(localStorageReference)})
     }
 
     this.ref = base.syncState(`${storeID}/fishes`, {
       context: this,
       state: 'fishes',
-    }); 
+    })
   }
 
-  componentDidUpdate() {
-    const { storeID } = this.props.match.params;
-    const { order } = this.state;
+  componentDidUpdate () {
+    const { storeID } = this.props.match.params
+    const { order } = this.state
 
-    localStorage.setItem(storeID, JSON.stringify(order));
+    localStorage.setItem(storeID, JSON.stringify(order))
   }
 
-  componentWillUnmount() {
-    base.removeBinding(this.ref);
+  componentWillUnmount () {
+    base.removeBinding(this.ref)
   }
 
   addFish = fish => {
     // 1. Take a copy of the existing state
-    const fishes = { ...this.state.fishes };
+    const fishes = { ...this.state.fishes }
     // 2. Add our new fish to that fishes variable
-    fishes[`fish${Date.now()}`] = fish;
+    fishes[`fish${Date.now()}`] = fish
     // 3. Set the new fishes object to state
-    this.setState({ fishes });
+    this.setState({ fishes })
   };
 
   updateFish = (key, updatedFish) => {
     // 1. Take a copy of the current state
-    const fishes = { ...this.state.fishes };
+    const fishes = { ...this.state.fishes }
     // 2. Update that state
-    fishes[key] = updatedFish;
+    fishes[key] = updatedFish
     // 3. Set that to state
-    this.setState({ fishes });
+    this.setState({ fishes })
   }
 
+
+
   loadSampleFishes = () => {
-    this.setState({ fishes: sampleFishes });
+    this.setState({ fishes: sampleFishes })
   }
 
   addToOrder = key => {
     // 1. Take a copy of state
-    const { order } = { ...this.state };
+    const { order } = { ...this.state }
     // 2. Either add to the order, or update the number in our order
-    order[key] = order[key] + 1 || 1;
+    order[key] = order[key] + 1 || 1
     // 3. Call setState to update our state object
-    this.setState({ order });
+    this.setState({ order })
   }
 
-  render() {
+  render () {
     return (
       <div className="catch-of-the-day">
         <div className="menu">
@@ -92,11 +94,11 @@ class App extends Component {
           addFish={this.addFish}
           updateFish={this.updateFish}
           loadSampleFishes={this.loadSampleFishes}
-          fishes={this.state.fishes}  
+          fishes={this.state.fishes}
         />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

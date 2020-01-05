@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class AddFishForm extends Component {
   nameRef = React.createRef();
@@ -9,7 +9,7 @@ class AddFishForm extends Component {
 
   createFish = event => {
     // 1. stop the form from submitting
-    event.preventDefault();
+    event.preventDefault()
     const fish = {
       name: this.nameRef.current.value,
       price: parseFloat(this.priceRef.current.value),
@@ -17,12 +17,12 @@ class AddFishForm extends Component {
       desc: this.descRef.current.value,
       image: this.imageRef.current.value,
     }
-    this.props.addFish(fish);
+    this.props.addFish(fish)
     // refresh the form
-    event.currentTarget.reset();
+    event.currentTarget.reset()
   }
 
-  render() {
+  render () {
     return (
       <form className="fish-edit" onSubmit={this.createFish}>
         <input name="name" ref={this.nameRef} type="text" placeholder="Name" />
@@ -36,8 +36,8 @@ class AddFishForm extends Component {
         <input name="image" ref={this.imageRef} type="text" placeholder="Image" />
         <button type="submit">+ Add Fish</button>
       </form>
-    );
+    )
   }
 }
 
-export default AddFishForm;
+export default AddFishForm

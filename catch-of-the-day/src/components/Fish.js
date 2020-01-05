@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import { formatPrice } from '../helpers';
+import React, { Component } from 'react'
+import { formatPrice } from '../helpers'
 
 class Fish extends Component {
   handleClick = () => {
-    this.props.addToOrder(this.props.index);
+    this.props.addToOrder(this.props.index)
   }
 
-  render() {
-    const { image, name, price, desc, status } = this.props.details;
-    const isAvailable = (status === 'available');
+  render () {
+    const { image, name, price, desc, status } = this.props.details
+    const isAvailable = (status === 'available')
     return (
       <li className="menu-fish">
         <img src={image} alt={name} />
@@ -21,8 +21,8 @@ class Fish extends Component {
           {isAvailable ? 'Add To Order' : 'Sold Out'}
         </button>
       </li>
-    );
+    )
   }
 }
 
-export default Fish;
+export default Fish

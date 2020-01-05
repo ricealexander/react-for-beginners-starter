@@ -1,9 +1,9 @@
-import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
-import App from './App';
-import NotFound from './NotFound';
-import StorePicker from './StorePicker';
+import App from './App'
+import NotFound from './NotFound'
+import StorePicker from './StorePicker'
 
 const Router = () => (
   <BrowserRouter>
@@ -15,4 +15,4 @@ const Router = () => (
   </BrowserRouter>
 )
 
-export default Router;
+export default Router

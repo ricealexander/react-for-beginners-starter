@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import AddFishForm from './AddFishForm';
-import EditFishForm from './EditFishForm';
+import React, { Component } from 'react'
+import AddFishForm from './AddFishForm'
+import EditFishForm from './EditFishForm'
 
 class Inventory extends Component {
-  render() {
+  render () {
     return (
       <div className="inventory">
         <h2>Inventory</h2>
@@ -20,8 +20,8 @@ class Inventory extends Component {
           Load Sample Fishes
         </button>
       </div>
-    );
+    )
   }
 }
 
-export default Inventory;
+export default Inventory

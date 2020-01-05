@@ -1,41 +1,41 @@
-import React, { Component } from 'react';
-import { formatPrice } from '../helpers';
+import React, { Component } from 'react'
+import { formatPrice } from '../helpers'
 
 class Order extends Component {
   renderOrder = key => {
-    const fish = this.props.fishes[key];
-    const count = this.props.order[key];
-    const isAvailable = (fish && fish.status === 'available');
+    const fish = this.props.fishes[key]
+    const count = this.props.order[key]
+    const isAvailable = (fish && fish.status === 'available')
 
     // make sure the fish has loaded before we continue!
-    if (!fish) return null;
+    if (!fish) return null
 
     if (!isAvailable) {
       return (
         <li key={key}>
           Sorry, {fish ? fish.name : 'fish'} is no longer available
         </li>
-      );
+      )
     }
     return (
       <li key={key}>
         {count} lbs {fish.name}
         {formatPrice(count * fish.price)}
       </li>
-    );
+    )
   };
 
-  render() {
-    const orderIDs = Object.keys(this.props.order);
+  render () {
+    const orderIDs = Object.keys(this.props.order)
 
     const total = orderIDs.reduce((tally, key) => {
-      const fish = this.props.fishes[key];
-      const count = this.props.order[key];
-      const isAvailable = (fish && fish.status === 'available');
+      const fish = this.props.fishes[key]
+      const count = this.props.order[key]
+      const isAvailable = (fish && fish.status === 'available')
 
-      if (!isAvailable) return tally;
-      return tally + (count * fish.price);
-    }, 0);
+      if (!isAvailable) return tally
+      return tally + (count * fish.price)
+    }, 0)
 
     return (
       <div className="order-wrap">
@@ -46,8 +46,8 @@ class Order extends Component {
           <strong>{formatPrice(total)}</strong>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default Order;
+export default Order
