@@ -1,0 +1,10 @@
+RewriteBase /
+
+# If the page is /index.html, stop processing rules
+RewriteRule ^index\.html$ - [L]
+
+# If the page is not found (not a file or directory),
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# Route request to index.html
+RewriteRule . /index.html [L]
